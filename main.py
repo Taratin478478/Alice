@@ -1,6 +1,7 @@
 # импортируем библиотеки
 from flask import Flask, request
 import logging
+from waitress import serve
 
 # библиотека, которая нам понадобится для работы с JSON
 import json
@@ -132,4 +133,5 @@ def get_suggests(user_id):
 
 
 if __name__ == '__main__':
-    app.run()
+    # app.run()
+    serve(app, host='0.0.0.0', port=5000)
